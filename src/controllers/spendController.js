@@ -17,10 +17,10 @@ const spendController = {
                 spend.date = moment(spend.date).format('YYYY-MM-DD')
                 result[time] = result[time] ? [...result[time], spend] : [spend]
                 if (spend.type === 'expense') {
-                    expense = expense + spend.amount
+                    expense = expense + Number(spend.amount)
                     return
                 }
-                income = income + spend.amount
+                income = income + Number(spend.amount)
             })
 
             res.send({
